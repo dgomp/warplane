@@ -18,6 +18,7 @@ export default class GameScene extends Phaser.Scene {
         this.load.image('enemyBullet', '../assets/img/bullet.png');
         this.load.audio('startMusic', '../assets/audio/gameMusic.mp3');
         this.load.audio('bulletSound', '../assets/audio/bullet.wav');
+        this.load.audio('explosionSound', '../assets/audio/explosion.ogg');
     }
 
     create() {
@@ -40,6 +41,10 @@ export default class GameScene extends Phaser.Scene {
         
         this.bulletEnemySound = this.sound.add('bulletSound', {
             volume: 0.2
+        });
+
+        this.explosionSound = this.sound.add('explosionSound', {
+            volume: 0.3
         });
 
         this.startMusic.play();
@@ -255,6 +260,7 @@ export default class GameScene extends Phaser.Scene {
 
         if (enemy.hp <= 0) {
             enemy.destroy();
+            this.explosionSound.play();
             this.score += GAME_CONFIG.SCORE_PER_KILL;
             this.scoreText.setText('Pontuação: ' + this.score);
         }
