@@ -20,6 +20,7 @@ export default class GameScene extends Phaser.Scene {
         this.load.audio('bulletSound', '../assets/audio/bullet.wav');
         this.load.audio('explosionSound', '../assets/audio/explosion.ogg');
         this.load.audio('gameOverSound', '../assets/audio/gameover.mp3');
+        this.load.audio('timeOutSound', '../assets/audio/timeout.mp3');
     }
 
     create() {
@@ -49,6 +50,10 @@ export default class GameScene extends Phaser.Scene {
         });
 
         this.gameOverSound = this.sound.add('gameOverSound', {
+            volume: 0.3
+        });
+
+        this.timeOutSound = this.sound.add('timeOutSound', {
             volume: 0.3
         });
 
@@ -279,6 +284,7 @@ export default class GameScene extends Phaser.Scene {
 
         if (this.timeLimit <= 0) {
             this.endGame('TEMPO ESGOTADO');
+            this.timeOverSound.play();
         }
     }
 
