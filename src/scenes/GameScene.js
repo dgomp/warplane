@@ -30,7 +30,7 @@ export default class GameScene extends Phaser.Scene {
 
     setupAudio() {
         this.startMusic = this.sound.add('startMusic', {
-            volume: 0.5,
+            volume: 3,
             loop: true
         });
         
