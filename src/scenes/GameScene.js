@@ -284,7 +284,7 @@ export default class GameScene extends Phaser.Scene {
 
         if (this.timeLimit <= 0) {
             this.endGame('TEMPO ESGOTADO');
-            this.timeOverSound.play();
+            this.timeOutSound.play();
         }
     }
 
