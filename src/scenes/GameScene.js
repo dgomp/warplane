@@ -19,8 +19,8 @@ export default class GameScene extends Phaser.Scene {
         this.load.audio('startMusic', '../assets/audio/gameMusic.mp3');
         this.load.audio('bulletSound', '../assets/audio/bullet.wav');
         this.load.audio('explosionSound', '../assets/audio/explosion.ogg');
-        this.load.audio('gameOverSound', '../assets/audio/gameover.mp3');
-        this.load.audio('timeOutSound', '../assets/audio/timeout.mp3');
+        this.load.audio('gameOverSound', '../assets/audio/gameOver.mp3');
+        this.load.audio('timeOutSound', '../assets/audio/timeOut.mp3');
     }
 
     create() {
@@ -46,7 +46,7 @@ export default class GameScene extends Phaser.Scene {
         });
 
         this.explosionSound = this.sound.add('explosionSound', {
-            volume: 0.5
+            volume: 0.7
         });
 
         this.gameOverSound = this.sound.add('gameOverSound', {
