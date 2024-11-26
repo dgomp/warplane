@@ -19,6 +19,7 @@ export default class GameScene extends Phaser.Scene {
         this.load.audio('startMusic', '../assets/audio/gameMusic.mp3');
         this.load.audio('bulletSound', '../assets/audio/bullet.wav');
         this.load.audio('explosionSound', '../assets/audio/explosion.ogg');
+        this.load.audio('gameOverSound', '../assets/audio/gameover.mp3');
     }
 
     create() {
@@ -44,6 +45,10 @@ export default class GameScene extends Phaser.Scene {
         });
 
         this.explosionSound = this.sound.add('explosionSound', {
+            volume: 0.3
+        });
+
+        this.gameOverSound = this.sound.add('gameOverSound', {
             volume: 0.3
         });
 
@@ -279,6 +284,7 @@ export default class GameScene extends Phaser.Scene {
 
     gameOverScene(player, enemy) {
         this.endGame('GAME OVER');
+        this.gameOverSound.play();
     }
 
     endGame(message) {
