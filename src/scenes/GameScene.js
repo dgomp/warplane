@@ -46,7 +46,7 @@ export default class GameScene extends Phaser.Scene {
         });
 
         this.explosionSound = this.sound.add('explosionSound', {
-            volume: 0.3
+            volume: 0.5
         });
 
         this.gameOverSound = this.sound.add('gameOverSound', {
