@@ -18,3 +18,9 @@ Após, execute o arquivo ``Warplane.bat``.
 
 * Movimentação: Setas, **←** e **→** do teclado
 * Tiro: **espaço**
+
+## Jogar sem Instalar
+
+Quer jogar agora, sem precisar baixar nada?
+
+[Clique aqui](https://linktr.ee/warplanegame)
